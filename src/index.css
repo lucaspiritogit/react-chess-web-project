@@ -1,0 +1,220 @@
+/* global selectores */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* end of global selectors */
+
+/* start of navbar */
+
+.logoImage {
+  width: 60px;
+}
+
+.navLinksResponsive {
+  display: none;
+}
+
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  
+}
+
+.navbar {
+  display: grid;
+  grid-template-areas: "logo links x";
+  grid-template-columns: repeat(3, 1fr);
+  place-items: center;
+  position: sticky;
+  top: 0px;
+  text-align: center;
+  width: 100%;
+  background: whitesmoke;
+  border-bottom: 0.1px solid black;
+  z-index: 10;
+  
+}
+
+.navLogoName {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  margin: 10px;
+}
+
+.navLogoName h1 {
+  margin-left: 10px;
+}
+
+.navLinksContainer li {
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: inline-block;
+  list-style-type: none;
+  margin: 25px;
+  
+}
+
+.navLinksContainer a {
+  color: black;
+}
+
+.playButton{
+  display: inline-block;
+  font-size: 1.6rem;
+  font-weight: bold;
+  padding: 10px 2rem;
+  text-align: center;
+  text-decoration: none;
+  background-color: #4ee753;
+  border: none;
+}
+
+/* end of navbar section */
+
+/* main section */
+
+.bannerContainer {
+  position: relative;
+  height: 80vh;
+  width: 100vw;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.bannerText {
+  position: absolute;
+  color: white;
+  font-size: 3rem;
+  margin: 15px;
+  padding: 15px;
+}
+
+.bannerText span {
+  color: rgb(72, 169, 214);
+}
+
+#bannerVideo {
+  position: absolute;
+  z-index: -2;
+  width: auto;
+  height: auto;
+  min-width: 100%;
+  min-height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.mainContentIntro {
+  margin: 15px;
+  padding: 15px;
+  font-size: 1.2rem;
+}
+
+.mainContentIntro h1 {
+  margin-bottom: 15px;
+}
+
+.mainContentIntro p {
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+/* cards section */
+
+.CardSection {
+  display: grid;
+  grid-template-areas: "card card card";
+  grid-template-columns: repeat(3, 1fr);
+  place-items: center;
+  text-align: center;
+  background: black;
+  color: white;
+  width: 100%;
+  height: 650px;
+  font-size: 1.5rem;
+}
+
+.CardSection img {
+  margin: 20px;
+}
+
+.rook img {
+  width: 200px;
+}
+
+.pawn img {
+  width: 100px;
+}
+
+.horse img {
+  width: 100px;
+}
+/* end of cards section */
+
+/* end of main section */
+
+/* media queries */
+
+@media screen and (min-width: 320px) and (max-width: 768px) {
+  .navbar {
+    grid-template-areas:
+      "logo"
+      "links";
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(auto-fill, 1fr);
+  }
+  .navbar ul {
+    display: none;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .bannerText {
+    font-size: 1.8rem;
+  }
+  .CardSection {
+    display: flex;
+    flex-direction: column;
+    height: 900px;
+  }
+
+  .navLinksResponsive {
+    display: flex;
+    font-size: 1rem;
+  }
+
+  .navBurger {
+    width: 35px;
+    margin: 10px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .navbar {
+    grid-template-areas: "logo links x";
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 100px;
+  }
+  .navbar ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .navBurger{
+    display: none;
+  }
+}

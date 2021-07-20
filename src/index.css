@@ -28,7 +28,14 @@ a {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  
+}
+
+.navHomeLink {
+  color: black;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .navbar {
@@ -43,7 +50,6 @@ a {
   background: whitesmoke;
   border-bottom: 0.1px solid black;
   z-index: 10;
-  
 }
 
 .navLogoName {
@@ -63,14 +69,13 @@ a {
   display: inline-block;
   list-style-type: none;
   margin: 25px;
-  
 }
 
 .navLinksContainer a {
   color: black;
 }
 
-.playButton{
+.playButton {
   display: inline-block;
   font-size: 1.6rem;
   font-weight: bold;
@@ -79,8 +84,14 @@ a {
   text-decoration: none;
   background-color: #4ee753;
   border: none;
+  border-radius: 10px;
+  cursor: pointer;
 }
 
+.playButton:hover {
+  transform: scale(1.1);
+  transition: ease-in-out 0.5s;
+}
 /* end of navbar section */
 
 /* main section */
@@ -143,7 +154,7 @@ a {
   background: black;
   color: white;
   width: 100%;
-  height: 650px;
+  height: 450px;
   font-size: 1.5rem;
 }
 
@@ -188,7 +199,7 @@ a {
   .CardSection {
     display: flex;
     flex-direction: column;
-    height: 900px;
+    height: 700px;
   }
 
   .navLinksResponsive {
@@ -199,6 +210,18 @@ a {
   .navBurger {
     width: 35px;
     margin: 10px;
+  }
+
+  .rook img {
+    width: 100px;
+  }
+
+  .pawn img {
+    width: 60px;
+  }
+
+  .horse img {
+    width: 60px;
   }
 }
 
@@ -214,7 +237,7 @@ a {
     align-items: center;
   }
 
-  .navBurger{
+  .navBurger {
     display: none;
   }
 }

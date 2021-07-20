@@ -10,9 +10,6 @@ export default function Navbar() {
                 <a className="navHomeLink" href="/">
                     <img src={logo} alt="" className="logoImage" />
                     <h1>Company</h1>
-                    <div className="navLinksResponsive">
-                        <img src={navBurger} alt="" className="navBurger" />
-                    </div>
                 </a>
             </div>
             <div className="navLinksContainer">
@@ -26,6 +23,14 @@ export default function Navbar() {
                     <li><a href="/">FAQ</a></li>
                 </ul>
             </div>
+            <div className="navLinksResponsive">
+                        <img src={navBurger} alt="" className="navBurger" />
+                        <ul className="responsiveLinks">
+                            <a href="/"><li>b</li></a>
+                            <a href="/"><li>a</li></a>
+                            <a href="/"><li>a</li></a>
+                        </ul>
+                    </div>
         </div>
     )
 }

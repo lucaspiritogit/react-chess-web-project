@@ -179,18 +179,24 @@ a {
 
 /* media queries */
 
-@media screen and (min-width: 320px) and (max-width: 768px) {
+@media screen and (min-width: 320px) and (max-width: 600px) {
   .navbar {
-    grid-template-areas:
-      "logo"
-      "links";
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(auto-fill, 1fr);
+    display: grid;
+    grid-template-areas: "logo links links";
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    place-items: center;
+    width: 100%;
   }
-  .navbar ul {
+  .navLinksContainer {
     display: none;
-    justify-content: center;
-    align-items: center;
+  }
+
+  .navLogoName {
+    grid-area: logo;
+  }
+  .responsiveLinks {
+    display: none;
   }
 
   .bannerText {
@@ -205,11 +211,11 @@ a {
   .navLinksResponsive {
     display: flex;
     font-size: 1rem;
+    grid-area: links;
   }
 
   .navBurger {
     width: 35px;
-    margin: 10px;
   }
 
   .rook img {
@@ -227,17 +233,13 @@ a {
 
 @media screen and (min-width: 768px) {
   .navbar {
-    grid-template-areas: "logo links x";
+    display: grid;
+    grid-template-areas: "logo links links";
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 100px;
-  }
-  .navbar ul {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    grid-template-rows: 1fr;
   }
 
-  .navBurger {
-    display: none;
+  .navLinksContainer {
+    grid-area: links;
   }
 }

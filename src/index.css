@@ -40,8 +40,8 @@ a {
 
 .navbar {
   display: grid;
-  grid-template-areas: "logo links x";
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas: "logo links links .";
+  grid-template-columns: repeat(3, auto);
   place-items: center;
   position: sticky;
   top: 0px;
@@ -86,11 +86,11 @@ a {
   border: none;
   border-radius: 10px;
   cursor: pointer;
+  transition: all 0.5s;
 }
 
 .playButton:hover {
   transform: scale(1.1);
-  transition: ease-in-out 0.5s;
 }
 /* end of navbar section */
 
@@ -163,15 +163,15 @@ a {
 }
 
 .rook img {
-  width: 200px;
+  width: 140px;
 }
 
 .pawn img {
-  width: 100px;
+  width: 70px;
 }
 
 .horse img {
-  width: 100px;
+  width: 80px;
 }
 /* end of cards section */
 
@@ -179,13 +179,14 @@ a {
 
 /* media queries */
 
-@media screen and (min-width: 320px) and (max-width: 600px) {
+@media screen and (min-width: 320px) and (max-width: 767px) {
   .navbar {
     display: grid;
-    grid-template-areas: "logo links links";
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "logo links .";
+    grid-template-columns: auto 1fr;
     grid-template-rows: auto;
     place-items: center;
+
     width: 100%;
   }
   .navLinksContainer {
@@ -205,7 +206,7 @@ a {
   .CardSection {
     display: flex;
     flex-direction: column;
-    height: 700px;
+    height: 1000px;
   }
 
   .navLinksResponsive {
@@ -231,15 +232,36 @@ a {
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) and (max-width: 1280px) {
   .navbar {
     display: grid;
-    grid-template-areas: "logo links links";
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
+    grid-template-areas: "logo links .";
+    grid-template-columns: 0.2fr auto auto;
   }
 
   .navLinksContainer {
     grid-area: links;
+  }
+
+  .rook img {
+    width: 80px;
+  }
+
+  .pawn img {
+    width: 40px;
+  }
+
+  .horse img {
+    width: 60px;
+  }
+
+  .CardSection {
+    display: flex;
+    flex-direction: column;
+    height: 700px;
+  }
+
+  .cardsContainer {
+    margin: 20px;
   }
 }

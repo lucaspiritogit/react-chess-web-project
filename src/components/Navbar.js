@@ -1,9 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import logo from '../components/../images/logo.png'
-import navBurger from '../components/../images/navburger.png'
+import { GiHamburgerMenu } from 'react-icons/gi'
+
+
 
 
 export default function Navbar() {
+    const [isMobile, setIsMobile] = useState(false)
+    console.log(isMobile)
+
     return (
         <div className="navbar">
             <div className="navLogoName">
@@ -12,8 +17,8 @@ export default function Navbar() {
                     <h1>Company</h1>
                 </a>
             </div>
-            <div className="navLinksContainer">
-                <ul>
+            <div className={isMobile ? "navLinksContainerMobile" : "navLinksContainer"}>
+                <ul className="navLinksContainer">
                     <a href="/">
                     <button className="playButton">
                         Play 
@@ -23,14 +28,8 @@ export default function Navbar() {
                     <li><a href="/">FAQ</a></li>
                 </ul>
             </div>
-            <div className="navLinksResponsive">
-                        <img src={navBurger} alt="" className="navBurger" />
-                        <ul className="responsiveLinks">
-                            <a href="/"><li>b</li></a>
-                            <a href="/"><li>a</li></a>
-                            <a href="/"><li>a</li></a>
-                        </ul>
-                    </div>
+         <GiHamburgerMenu className="navBurger" onClick={() => setIsMobile(!isMobile)} />
+            
         </div>
     )
 }

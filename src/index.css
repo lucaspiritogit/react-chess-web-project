@@ -52,6 +52,10 @@ a {
   z-index: 10;
 }
 
+.navBurger {
+  display: none;
+}
+
 .navLogoName {
   display: flex;
   align-items: center;
@@ -181,41 +185,68 @@ a {
 @media screen and (min-width: 320px) and (max-width: 767px) {
   .navbar {
     display: grid;
-    grid-template-areas: "logo links .";
-    grid-template-columns: auto 1fr;
+    grid-template-areas: "logo logo links links";
+    grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto;
     place-items: center;
-
+    align-items: center;
     width: 100%;
+    transition: all 0.5 ease-out;
   }
+
   .navLinksContainer {
     display: none;
+    transition: all 0.5 ease-out;
+  }
+
+  .navLinksContainerMobile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 110px;
+    width: 100%;
+    height: auto;
+    background-color: whitesmoke;
+    transition: all 0.5 ease-out;
+  }
+
+  .navLinksContainerMobile ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    width: 100%;
+    height: auto;
+    background-color: whitesmoke;
+  }
+
+  .navLinksContainerMobile ul a {
+    color: black;
+    font-size: 1.5rem;
+    font-weight: bold;
   }
 
   .navLogoName {
     grid-area: logo;
   }
-  .responsiveLinks {
-    display: none;
-  }
 
   .bannerText {
     font-size: 1.8rem;
   }
+
   .CardSection {
     display: flex;
     flex-direction: column;
     height: auto;
   }
 
-  .navLinksResponsive {
-    display: flex;
-    font-size: 1rem;
-    grid-area: links;
-  }
-
   .navBurger {
-    width: 35px;
+    grid-area: links links;
+    display: block;
+    cursor: pointer;
+    font-size: 3rem;
   }
 
   .rook img {
